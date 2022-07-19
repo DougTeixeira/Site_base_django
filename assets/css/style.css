@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Arima', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+body {
+    background: linear-gradient(-45deg, rgb(4, 0, 12), rgb(76, 0, 197), rgb(0, 0, 0) );
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background: linear-gradient(-45deg, rgba(174, 0, 255), rgb(77, 1, 255), rgba(174, 0, 255), rgba(174, 0, 255) ) no-repeat;
+    background-size: 300% 300%;
+    animation: gradient 5s ease-in-out alternate-reverse infinite;
+    border-radius: 40%;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    position: relative;
+    z-index: 5;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-fone {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+}
+
+.header-fone img {
+    width: 100%;
+    height: 100%;
+}
+
+.header h1 {
+    padding: 5px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Cinzel', serif;
+    transition: all 300ms ease-in-out;
+}
+.header h1 a {
+    color: #000000;
+    transition: all 300ms ease-in-out;
+}
+.header h1 a:hover {
+    color: #ee9bff;
+}
+
+.artist-content {
+    border-bottom: 2px solid #d700ff;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    background-image: url("https://www.vagalume.com.br/travis-scott/images/travis-scott.jpg");
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    height: 150px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 200px;
+    z-index: 1;
+    transform: translateY(-30px);
+    height: 200px;
+}
+
+.artist-content::before {
+    content: "";
+    background-image: url("https://www.vagalume.com.br/img/bg/pattern-bg.webp");
+    position: absolute;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    background-position: center;
+    background-size: cover;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.artist-photo {
+    position: relative;
+    top: 80px;
+}
+
+.artist-photo::before {
+    content: "";
+    border-top: 1px solid rgba(255,255,255,.8);
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    transform: rotate(5deg);
+}
+.artist-photo::after {
+    content: "";
+    border-top: 1px solid rgba(255,255,255,.4);
+    border-radius: 50%;
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    right: -16px;
+    bottom: -16px;
+    transform: rotate(5deg);
+}
+
+.artist-img {
+    width: 120px;
+    height: 120px;
+}
+
+.artist-photo img {
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #ffffff;
+    width: 100%;
+    height: 100%;
+}
+
+.artist-details{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+    margin-left: 30px;
+    z-index: 1;
+    transform: translateY(50px);
+}
+
+.artist-name, .artist-style {
+    font-size: 20px;
+    color:#ffffff;
+}
+
+.artist-style-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.artist-style {
+    background: rgba(255,255,255,.25);
+    border-radius: 20%;
+    padding: 2px;
+    margin-right: 5px;
+    border: 1px solid transparent;
+}
+
+.artist-style:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255,255,255,.25);
+}
+
+.main-box-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 30px 0;
+    position: relative;
+    padding-top: 30px;
+}
+
+.box-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: fit-content;
+    box-shadow: 0 0 15px #000000;
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+    border-radius: 20%;
+}
+
+.album-img {
+    width: 100%;
+    height: 350px;
+}
+
+.box-content img {
+    width: 100%;
+    height: 100%;
+}
+
+.details {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background:#636363;
+    width: 100%;
+    height: 100%;
+    color: #000000;
+    top: 100%;
+}
+
+.album-title, .album-date {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.album-name, .album-launch {
+    font-size: 30px;
+    font-style: italic;
+}
+
+.box-content:hover::after{
+    animation: borderstop 1s ease-in-out;
+}
+.box-content:hover::before{
+    animation: bordersbottom 1s ease-in-out;
+}
+
+.box-content:hover{
+    animation: scalebox 2s alternate infinite;
+    border-radius: 5%;
+}
+
+.box-content:hover .details{
+    animation: details 0.8s ease-in-out forwards;
+}
+
+.box-content:hover .album-title, .box-content:hover .album-date {
+    display: block;
+}
+
+.main-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #000000;
+    padding: 30px;
+}
+
+.main-footer a {
+    color: white;
+    font-size: 20px;
+}
+
+.main-footer a:hover {
+    filter: brightness(.8);
+}
+
+@keyframes gradient {
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+@keyframes details {
+    100% {
+        transform: translate(0,-100%);
+    }
+}
+
+@keyframes scalebox {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.03);
+    }
+}
